@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="SurveillanceCamera"]/specialDisplayRadius</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="SurveillanceCamera"]</xpath>
+			<value>
+				<specialDisplayRadius>11.5</specialDisplayRadius>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="SurveillanceCamera"]/designatorDropdown</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="SurveillanceCamera"]</xpath>
+			<value>
+				<designatorDropdown>SE_SurveillanceCameras</designatorDropdown>
+			</value>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="SurveillanceCamera"]/fillPercent</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="SurveillanceCamera"]/fillPercent</xpath>
+			<value>
+				<fillPercent>0</fillPercent> <!-- default is 0.2 -->
+			</value>
+		</nomatch>
+		<match Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="SurveillanceCamera"]/fillPercent</xpath>
+			<value>
+				<fillPercent>0</fillPercent> <!-- default is 0.2 -->
+			</value>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="SurveillanceCamera"]/label</xpath>
+		<value>
+			<label>small surveillance camera</label>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="SurveillanceCamera"]/description</xpath>
+		<value>
+			<description>A small LED surveillance camera that provides vision for an area with LED lighting. Covers 12 squares.</description>
+		</value>
+	</Operation>
+	
+</Patch>

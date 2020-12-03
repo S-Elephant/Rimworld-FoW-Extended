@@ -1,0 +1,29 @@
+<ModMetaData>
+	<name>Real Fog of War Extended</name>
+	<author>Squirting Elephant</author>
+	<supportedVersions>
+		<li>1.0</li>
+		<li>1.1</li>
+	</supportedVersions>
+	<packageId>SquirtingElephant.FowExtended</packageId>
+	<loadAfter>
+		<li>LukaKama.RimworldRealFoW</li>
+	</loadAfter>
+	<modDependencies>
+		<li>
+			<packageId>LukaKama.RimworldRealFoW</packageId>
+			<displayName>Real Fog of War</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=836245605</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<description>Adds a new larger lategame (for big endgame bases) camera + research, and displays the camera radius when placing them and entities no longer receive cover from standing behind a camera.
+
+- Performance impact: Unknown. However using fewer larger cameras instead of many smaller ones probably reduces performance drain.
+- Mod is XML and XPath only but uses code from the original author's assembly.
+- Can safely be added to an existing game.
+- Can safely be removed from an existing game providing you destroy any structures from this mod and stop any research in progress related to this mod.
+- Requires the Real Fog of War mod loaded BEFORE this mod.
+
+Important note: Real Fog of War mod was not created by me. I only created these modifications for quality of life and to prevent big endgame bases to spam tons and tons of cameras everywhere.
+Dev note: I created a base-class so that adding more camera-types in the future will be cleaner and faster.</description>
+</ModMetaData>

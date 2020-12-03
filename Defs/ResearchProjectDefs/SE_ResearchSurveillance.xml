@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ResearchProjectDef>
+		<defName>SurveillanceCameraAdv</defName>
+		<label>advanced cameras</label>
+		<description>Allows the production of advanced surveillance cameras.</description>
+		<baseCost>6000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		<prerequisites>
+			<li>SurveillanceCamera</li>
+		</prerequisites>
+		<researchViewX>9</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>SurveillanceCameraArmored</defName>
+		<label>armored cameras</label>
+		<description>Allows the production of armored surveillance cameras.</description>
+		<baseCost>6000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		<prerequisites>
+			<li>SurveillanceCameraAdv</li>
+		</prerequisites>
+		<researchViewX>10</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+</Defs>

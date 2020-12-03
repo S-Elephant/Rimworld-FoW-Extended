@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- ================================ Base Classes and such ================================ -->
+
+	<DesignatorDropdownGroupDef>
+		<defName>SE_SurveillanceCameras</defName>
+	</DesignatorDropdownGroupDef>
+
+	<ThingDef ParentName="BuildingBase" Name="SurveillanceCameraBase" Abstract="True">
+		<thingClass>Building</thingClass>
+		<description>Surveillance camera that provide vision for an area.</description>
+		<category>Building</category>
+		<designatorDropdown>SE_SurveillanceCameras</designatorDropdown>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Skyfaller</altitudeLayer>
+		<passability>Standable</passability>
+		<selectable>true</selectable>
+		<fillPercent>0</fillPercent>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<designationCategory>Security</designationCategory>
+		<rotatable>false</rotatable>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		<specialDisplayRadius>11.5</specialDisplayRadius>
+		<clearBuildingArea>false</clearBuildingArea>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Buildings/SurveillanceCamera</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.6, 0.3)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<statBases>
+			<Mass>4</Mass>
+			<Beauty>-10</Beauty>
+			<MaxHitPoints>50</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0.5 </Flammability> <!-- Default: 1.0 -->
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Flickable"/>
+			<!-- outcommented stuff below can be added by parent ThingDef -->
+			<!-- <li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>55</basePowerConsumption>
+			</li>
+			<li Class="RimWorldRealFoW.ThingComps.Properties.CompProperties_ProvideVision">
+				<viewRadius>12</viewRadius>
+			</li> -->
+		</comps>
+		<researchPrerequisites>
+			<li>SurveillanceCamera</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+<!-- ================================ Vanilla LED Camera ================================ -->
+
+	<ThingDef ParentName="SurveillanceCameraBase">
+		<defName>SE_LEDSurveillanceCamera</defName>
+		<label>small LED surveillance camera</label>
+		<description>A small LED surveillance camera that provides vision for an area with LED lighting. Covers 12 squares.</description>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<specialDisplayRadius>11.5</specialDisplayRadius>
+		<graphicData>
+			<texPath>Things/Buildings/SurveillanceCameraLED</texPath>
+		</graphicData>
+		<costList>
+			<Steel>60</Steel> <!-- Default: 30 -->
+			<ComponentIndustrial>2</ComponentIndustrial> <!-- Default: 1 -->
+		</costList>
+		<statBases>
+			<Mass>5</Mass> <!-- Default: 4 -->
+			<Beauty>-8</Beauty> <!-- Default: -10 -->
+			<MaxHitPoints>40</MaxHitPoints> <!-- Default: 50 -->
+			<WorkToBuild>2400</WorkToBuild>	<!-- Default: 2000 -->
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>95</basePowerConsumption> <!-- Default: 55 -->
+			</li>
+			<li Class="RimWorldRealFoW.ThingComps.Properties.CompProperties_ProvideVision">
+				<viewRadius>12</viewRadius>	<!-- Default: 12 -->
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>12</glowRadius>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>SurveillanceCamera</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+<!-- ================================ Medium LED Camera ================================ -->
+	
+	<ThingDef Name="SE_MediumLEDSurveillanceCamera" ParentName="SurveillanceCameraBase">
+		<defName>SE_MediumLEDSurveillanceCamera</defName>
+		<label>LED surveillance camera</label>
+		<description>A medium-sized LED surveillance camera that provides vision for an area with LED lighting. Covers 20 squares.</description>
+		<constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+		<specialDisplayRadius>19.5</specialDisplayRadius>
+		<graphicData>
+			<texPath>Things/Buildings/SurveillanceCameraMedLED</texPath>
+		</graphicData>
+		<costList>
+			<Steel>150</Steel> <!-- Default: 30 -->
+			<ComponentIndustrial>5</ComponentIndustrial> <!-- Default: 1 -->
+		</costList>
+		<statBases>
+			<Mass>12</Mass> <!-- Default: 4 -->
+			<Beauty>-10</Beauty>
+			<MaxHitPoints>60</MaxHitPoints> <!-- Default: 50 -->
+			<WorkToBuild>9000</WorkToBuild>	<!-- Default: 2000 -->
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>320</basePowerConsumption> <!-- Default: 55 -->
+			</li>
+			<li Class="RimWorldRealFoW.ThingComps.Properties.CompProperties_ProvideVision">
+				<viewRadius>20</viewRadius>	<!-- Default: 12 -->
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>20</glowRadius>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>SurveillanceCameraAdv</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+<!-- ================================ Large Camera ================================ -->
+	
+	<ThingDef ParentName="SurveillanceCameraBase">
+		<defName>LargeSurveillanceCamera</defName>
+		<label>large surveillance camera</label>
+		<description>A large surveillance camera that provides a lot of vision for an area. Covers 25 squares.</description>
+		<constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+		<specialDisplayRadius>24.5</specialDisplayRadius>
+		<graphicData>
+			<texPath>Things/Buildings/SurveillanceCameraLarge</texPath>
+		</graphicData>
+		<costList>
+			<Steel>150</Steel> <!-- Default: 30 -->
+			<ComponentIndustrial>4</ComponentIndustrial> <!-- Default: 1 -->
+			<ComponentSpacer>1</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>15</Mass> <!-- Default: 4 -->
+			<Beauty>-10</Beauty>
+			<MaxHitPoints>75</MaxHitPoints> <!-- Default: 50 -->
+			<WorkToBuild>9000</WorkToBuild>	<!-- Default: 2000 -->
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>260</basePowerConsumption> <!-- Default: 55 -->
+			</li>
+			<li Class="RimWorldRealFoW.ThingComps.Properties.CompProperties_ProvideVision">
+				<viewRadius>25</viewRadius>	<!-- Default: 12 -->
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>SurveillanceCameraAdv</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+<!-- ================================ Medium Indestructible LED Camera ================================ -->
+	
+	<ThingDef ParentName="SE_MediumLEDSurveillanceCamera">
+		<defName>SE_MediumIndestructibleLEDSurveillanceCamera</defName>
+		<label>armored LED surveillance camera</label>
+		<description>A medium-sized indestructible LED surveillance camera that provides vision for an area with LED lighting. Covers 20 squares.</description>
+		<statBases>
+			<Flammability>0</Flammability>
+			<WorkToBuild>9000</WorkToBuild>	<!-- Default: 2000 -->
+		</statBases>
+		<graphicData>
+			<texPath>Things/Buildings/SurveillanceCameraMedLEDIndestructible</texPath>
+		</graphicData>
+		<costList>
+			<Steel>170</Steel> <!-- Default: 30 -->
+			<Plasteel>35</Plasteel>
+			<ComponentIndustrial>4</ComponentIndustrial> <!-- Default: 1 -->
+			<ComponentSpacer>1</ComponentSpacer>
+		</costList>
+		<researchPrerequisites Inherit="False">
+			<li>SurveillanceCameraArmored</li>
+		</researchPrerequisites>
+		
+		<useHitPoints>false</useHitPoints>
+		<isAutoAttackableMapObject>false</isAutoAttackableMapObject>
+	</ThingDef>
+	
+<!-- ================================ End ================================ -->
+
+</Defs>
